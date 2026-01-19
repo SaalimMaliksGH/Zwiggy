@@ -8,7 +8,7 @@ const stripe = new Stripe("sk_test_51PXHsYFLHJOXPzZIn0BftHnnPzCgZKKTpdZNyFIxNdA4
 // placing user order from Frontend
 export const placeOrder = async(req, res) => {
 
-    const frontend_url = "http://localhost:5173";
+    const frontend_url = "https://zwiggy-front-end.onrender.com";
 
     try {
         const newOrder = new orderModel({
