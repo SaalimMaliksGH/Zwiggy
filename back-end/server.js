@@ -5,11 +5,14 @@ import { foodRouter } from "./routes/foodRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import cartRouter from "./routes/cartRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
+import dotenv from "dotenv";
 
+//load environment variables
+dotenv.config();
 
 //app config
 const app = express();
-const port = process.env.port || 4000;
+const port = process.env.PORT || 4000;
 
 //middleware
 app.use(express.json());
@@ -21,7 +24,7 @@ connectDB();
 
 //api endpoint
 app.use('/api/food', foodRouter);
-app.use('/images', express.static('uploads'));
+app.use('/images', express.static('uploads')); 
 app.use('/api/user', userRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/order', orderRouter);
